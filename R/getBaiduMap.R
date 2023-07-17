@@ -52,10 +52,10 @@ getBaiduMap = function(location, width=400, height = 400, zoom=10,
     lat = location_cor[2];
     
     ## set url
-    url_head = "http://api.map.baidu.com/staticimage?"
-    url = paste0(url_head, "width=", width, "&height=", height, "&center=",
-                 lon, ",", lat, "&zoom=", zoom)
-    if (scale == 2) url = paste0(url, "&scale=2")
+   url_head = "http://api.map.baidu.com/staticimage/v2?"
+url = paste0(url_head, "width=", width, "&height=", height, "&center=",
+             lon, ",", lat, "&zoom=", zoom,"&ak=",map_ak)
+if (scale == 2) url = paste0(url, "&scale=2")
     
     ## download image
     if  (!'baiduMapFileDrawer' %in% list.dirs(full.names= F, recursive=F)) {
